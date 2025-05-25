@@ -908,32 +908,32 @@ span.quot-name:before {
 .container-portfolio .portfolio-view {
   position: relative;
   float: left;
-  display: none;
+  display: block;
   overflow: hidden;
   background: #000;
   text-align: center;
   cursor: pointer;
+  width: 100%;
+  aspect-ratio: 9 / 16; /* proporción vertical */
 }
 
 .container-portfolio .portfolio-view img {
-  position: relative;
-  display: block;
-  width: -webkit-calc(100% + 60px);
-  width: calc(100% + 10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  opacity: .8;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.8;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-30px,0,0) scale(1.12);
-  transform: translate3d(-30px,0,0) scale(1.12);
-  -webkit-backface-visibility: hidden;
+  transform: scale(1.12);
   backface-visibility: hidden;
 }
 
 .container-portfolio .portfolio-view:hover img {
   opacity: 0.5;
-  -webkit-transform: translate3d(0,0,0) scale(1);
-  transform: translate3d(0,0,0) scale(1);
+  transform: scale(1);
 }
 
 .container-portfolio .portfolio-view figcaption,
@@ -950,7 +950,6 @@ span.quot-name:before {
   color: #FFF;
   text-transform: uppercase;
   font-size: 1.25em;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -984,16 +983,13 @@ span.quot-name:before {
   border-right: 1px solid #FFF;
   text-align: right;
   opacity: 0;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-40px,0,0);
-  transform: translate3d(-40px,0,0);
+  transform: translate3d(-40px, 0, 0);
 }
 
 .container-portfolio .portfolio-view:hover p {
   opacity: 1;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }
 
 .container-portfolio .portfolio-view figcaption > a {
@@ -1003,6 +999,8 @@ span.quot-name:before {
   font-size: 0;
   opacity: 0;
 }
+
+
 
 
 /*CONTACT SYTLE*/
